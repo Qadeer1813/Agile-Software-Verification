@@ -1,6 +1,6 @@
 // Student Name: Qadeer Hussain
 // Student Id: C00270632
-// Description: JUnit Black Box testing for Rate
+// Description: JUnit White Box testing for Rate
 
 package cm;
 import org.junit.jupiter.api.Test;
