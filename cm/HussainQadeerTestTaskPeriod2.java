@@ -140,17 +140,7 @@ public class HussainQadeerTestTaskPeriod2 {
         assertThrows(IllegalArgumentException.class, () -> periodA.overlaps(periodB));
     }
 
-//    New test to get to branch coverage 92%
-    @Test
-    void hourPartiallyInPeriods() {
-        cm.Period periodA = new cm.Period(3, 6);
-        cm.Period periodB = new cm.Period(5, 8);
-        cm.Period testPeriod = new cm.Period(4, 7);
-        List<cm.Period> list = Arrays.asList(periodA, periodB);
-        assertEquals(3, testPeriod.occurences(list));
-    }
-
-//  Duration
+    //  Duration
     @Test
     void periodMinDuration() {
         cm.Period period = new cm.Period(2,3);
@@ -163,5 +153,14 @@ public class HussainQadeerTestTaskPeriod2 {
         assertEquals(24,period.duration());
     }
 
+    //    New test to get to branch coverage 96%
+    @Test
+    void hourPartiallyInPeriods() {
+        cm.Period periodA = new cm.Period(3, 6);
+        cm.Period periodB = new cm.Period(5, 8);
+        cm.Period testPeriod = new cm.Period(4, 7);
+        List<cm.Period> list = Arrays.asList(periodA, periodB);
+        assertEquals(3, testPeriod.occurences(list));
+    }
 
 }
