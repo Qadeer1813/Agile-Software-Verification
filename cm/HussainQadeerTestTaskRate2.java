@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HussainQadeerTestTaskRate2 {
 
-//  Rate Constructor Tests
+    //  Rate Constructor Tests
     @Test
     void normalRateGreaterThanZero() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
@@ -46,12 +46,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void normalRateGreaterThanReducedRate() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,8));
-        reducedPeriod.add(new cm.Period(9,13));
+        reducedPeriod.add(new cm.Period(6, 8));
+        reducedPeriod.add(new cm.Period(9, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(14,15));
-        normalPeriod.add(new cm.Period(16,19));
+        normalPeriod.add(new cm.Period(14, 15));
+        normalPeriod.add(new cm.Period(16, 19));
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(5);
@@ -62,12 +62,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void existingCarPark() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,7));
-        reducedPeriod.add(new cm.Period(8,9));
+        reducedPeriod.add(new cm.Period(6, 7));
+        reducedPeriod.add(new cm.Period(8, 9));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(11,13));
-        normalPeriod.add(new cm.Period(14,17));
+        normalPeriod.add(new cm.Period(11, 13));
+        normalPeriod.add(new cm.Period(14, 17));
 
         BigDecimal normalRate = new BigDecimal(5);
         BigDecimal reducedRate = new BigDecimal(3);
@@ -78,12 +78,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void noOverlappingReducedPeriod() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,10));
-        reducedPeriod.add(new cm.Period(11,13));
+        reducedPeriod.add(new cm.Period(6, 10));
+        reducedPeriod.add(new cm.Period(11, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(12,14));
-        normalPeriod.add(new cm.Period(15,17));
+        normalPeriod.add(new cm.Period(12, 14));
+        normalPeriod.add(new cm.Period(15, 17));
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(5);
@@ -101,12 +101,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void noOverlappingNormalPeriod() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,8));
-        reducedPeriod.add(new cm.Period(9,13));
+        reducedPeriod.add(new cm.Period(6, 8));
+        reducedPeriod.add(new cm.Period(9, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(14,15));
-        normalPeriod.add(new cm.Period(16,19));
+        normalPeriod.add(new cm.Period(14, 15));
+        normalPeriod.add(new cm.Period(16, 19));
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(5);
@@ -119,12 +119,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void normalRateSameReducedRate() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,8));
-        reducedPeriod.add(new cm.Period(9,13));
+        reducedPeriod.add(new cm.Period(6, 8));
+        reducedPeriod.add(new cm.Period(9, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(14,15));
-        normalPeriod.add(new cm.Period(16,19));
+        normalPeriod.add(new cm.Period(14, 15));
+        normalPeriod.add(new cm.Period(16, 19));
 
         BigDecimal normalRate = new BigDecimal(7);
         BigDecimal reducedRate = new BigDecimal(6);
@@ -154,12 +154,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void reduceRateLessThan0() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,7));
-        reducedPeriod.add(new cm.Period(8,9));
+        reducedPeriod.add(new cm.Period(6, 7));
+        reducedPeriod.add(new cm.Period(8, 9));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(11,13));
-        normalPeriod.add(new cm.Period(14,17));
+        normalPeriod.add(new cm.Period(11, 13));
+        normalPeriod.add(new cm.Period(14, 17));
 
         BigDecimal normalRate = new BigDecimal(5);
         BigDecimal reducedRate = new BigDecimal(-2);
@@ -172,12 +172,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void normalRateLessGreaterThan10() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,8));
-        reducedPeriod.add(new cm.Period(9,13));
+        reducedPeriod.add(new cm.Period(6, 8));
+        reducedPeriod.add(new cm.Period(9, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(14,15));
-        normalPeriod.add(new cm.Period(16,19));
+        normalPeriod.add(new cm.Period(14, 15));
+        normalPeriod.add(new cm.Period(16, 19));
 
         BigDecimal normalRate = new BigDecimal(12);
         BigDecimal reducedRate = new BigDecimal(5);
@@ -208,12 +208,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void normalRateLessThanReducedRate() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,7));
-        reducedPeriod.add(new cm.Period(8,9));
+        reducedPeriod.add(new cm.Period(6, 7));
+        reducedPeriod.add(new cm.Period(8, 9));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(11,13));
-        normalPeriod.add(new cm.Period(14,17));
+        normalPeriod.add(new cm.Period(11, 13));
+        normalPeriod.add(new cm.Period(14, 17));
 
         BigDecimal normalRate = new BigDecimal(5);
         BigDecimal reducedRate = new BigDecimal(7);
@@ -226,12 +226,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void overLappingReducedPeriod() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,10));
-        reducedPeriod.add(new cm.Period(7,11));
+        reducedPeriod.add(new cm.Period(6, 10));
+        reducedPeriod.add(new cm.Period(7, 11));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(12,14));
-        normalPeriod.add(new cm.Period(15,17));
+        normalPeriod.add(new cm.Period(12, 14));
+        normalPeriod.add(new cm.Period(15, 17));
 
         BigDecimal normalRate = new BigDecimal(5);
         BigDecimal reducedRate = new BigDecimal(3);
@@ -244,12 +244,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void overLappingNormalPeriod() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,8));
-        reducedPeriod.add(new cm.Period(9,13));
+        reducedPeriod.add(new cm.Period(6, 8));
+        reducedPeriod.add(new cm.Period(9, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(14,17));
-        normalPeriod.add(new cm.Period(15,18));
+        normalPeriod.add(new cm.Period(14, 17));
+        normalPeriod.add(new cm.Period(15, 18));
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(5);
@@ -296,12 +296,12 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void reducedRateNull() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
-        reducedPeriod.add(new cm.Period(6,8));
-        reducedPeriod.add(new cm.Period(9,13));
+        reducedPeriod.add(new cm.Period(6, 8));
+        reducedPeriod.add(new cm.Period(9, 13));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
-        normalPeriod.add(new cm.Period(14,15));
-        normalPeriod.add(new cm.Period(16,19));
+        normalPeriod.add(new cm.Period(14, 15));
+        normalPeriod.add(new cm.Period(16, 19));
 
         BigDecimal normalRate = new BigDecimal(5);
         BigDecimal reducedRate = null;
@@ -311,7 +311,7 @@ public class HussainQadeerTestTaskRate2 {
         });
     }
 
-//  Rate Calculate Method
+    //  Rate Calculate Method
     @Test
     void reducedPeriodStay() {
         ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
@@ -333,17 +333,17 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void normalPeriodStay() {
         ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
-        reducedPeriods.add(new cm.Period(6,12));
+        reducedPeriods.add(new cm.Period(6, 12));
 
         ArrayList<cm.Period> normalPeriods = new ArrayList<>();
-        normalPeriods.add(new cm.Period(13,16));
+        normalPeriods.add(new cm.Period(13, 16));
 
         BigDecimal normalRate = new BigDecimal(6);
         BigDecimal reducedRate = new BigDecimal(3);
 
         cm.Rate rate = new cm.Rate(cm.CarParkKind.STAFF, reducedPeriods, normalPeriods, normalRate, reducedRate);
 
-        cm.Period periodStay = new cm.Period(14,15);
+        cm.Period periodStay = new cm.Period(14, 15);
         BigDecimal calculatedCharge = rate.calculate(periodStay);
         assertEquals(new BigDecimal(6), calculatedCharge);
     }
@@ -351,17 +351,17 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void mixedPeriodStay() {
         ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
-        reducedPeriods.add(new cm.Period(9,12));
+        reducedPeriods.add(new cm.Period(9, 12));
 
         ArrayList<cm.Period> normalPeriods = new ArrayList<>();
-        normalPeriods.add(new cm.Period(13,15));
+        normalPeriods.add(new cm.Period(13, 15));
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(4);
 
         cm.Rate rate = new cm.Rate(cm.CarParkKind.VISITOR, reducedPeriods, normalPeriods, normalRate, reducedRate);
 
-        cm.Period periodStay = new cm.Period(11,14);
+        cm.Period periodStay = new cm.Period(11, 14);
         BigDecimal calculatedCharge = rate.calculate(periodStay);
         assertEquals(new BigDecimal(12), calculatedCharge);
     }
@@ -369,28 +369,28 @@ public class HussainQadeerTestTaskRate2 {
     @Test
     void outsideOfPeriodStay() {
         ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
-        reducedPeriods.add(new cm.Period(6,12));
+        reducedPeriods.add(new cm.Period(6, 12));
 
         ArrayList<cm.Period> normalPeriods = new ArrayList<>();
-        normalPeriods.add(new cm.Period(13,16));
+        normalPeriods.add(new cm.Period(13, 16));
 
         BigDecimal normalRate = new BigDecimal(6);
         BigDecimal reducedRate = new BigDecimal(3);
 
         cm.Rate rate = new cm.Rate(cm.CarParkKind.STAFF, reducedPeriods, normalPeriods, normalRate, reducedRate);
 
-        cm.Period periodStay = new cm.Period(17,20);
+        cm.Period periodStay = new cm.Period(17, 20);
         BigDecimal calculatedCharge = rate.calculate(periodStay);
         assertEquals(new BigDecimal(0), calculatedCharge);
     }
 
     @Test
-    void periodStaNull() {
+    void periodStayNull() {
         ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
-        reducedPeriods.add(new cm.Period(9,12));
+        reducedPeriods.add(new cm.Period(9, 12));
 
         ArrayList<cm.Period> normalPeriods = new ArrayList<>();
-        normalPeriods.add(new cm.Period(13,15));
+        normalPeriods.add(new cm.Period(13, 15));
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(4);
@@ -435,7 +435,7 @@ public class HussainQadeerTestTaskRate2 {
 
     @Test
     void NormalPeriodsIsNull() {
-        ArrayList<Period> reducedPeriods = new ArrayList<>();
+        ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(new Period(6, 8));
         reducedPeriods.add(new Period(9, 13));
 
@@ -448,19 +448,20 @@ public class HussainQadeerTestTaskRate2 {
     }
 
     @Test
-    void overlappingPeriod() {
-        ArrayList<cm.Period> overlappingPeriods = new ArrayList<>();
-        overlappingPeriods.add(new cm.Period(10, 15));
-        overlappingPeriods.add(new cm.Period(14, 20));
-        overlappingPeriods.add(new cm.Period(16, 18));
+    void overlappingReducedPeriod() {
+        ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new cm.Period(10, 15));
+        reducedPeriods.add(new cm.Period(14, 20));
+        reducedPeriods.add(new cm.Period(16, 18));
+
+        ArrayList<cm.Period> normalPeriods = new ArrayList<>();
 
         BigDecimal normalRate = new BigDecimal("5");
         BigDecimal reducedRate = new BigDecimal("3");
 
         assertThrows(IllegalArgumentException.class, () -> {
-            new cm.Rate(cm.CarParkKind.STUDENT, overlappingPeriods, new ArrayList<>(), normalRate, reducedRate);
+            new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
         });
     }
-
 
 }
