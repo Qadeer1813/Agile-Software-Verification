@@ -429,7 +429,7 @@ public class HussainQadeerTestTaskRate2 {
         BigDecimal reducedRate = new BigDecimal("3");
 
         assertThrows(IllegalArgumentException.class, () -> {
-            new Rate(CarParkKind.STUDENT, null, normalPeriods, normalRate, reducedRate);
+            new cm.Rate(cm.CarParkKind.STUDENT, null, normalPeriods, normalRate, reducedRate);
         });
     }
 
@@ -443,7 +443,7 @@ public class HussainQadeerTestTaskRate2 {
         BigDecimal reducedRate = new BigDecimal("3");
 
         assertThrows(IllegalArgumentException.class, () -> {
-            new Rate(CarParkKind.STUDENT, reducedPeriods, null, normalRate, reducedRate);
+            new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriods, null, normalRate, reducedRate);
         });
     }
 
