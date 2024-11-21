@@ -165,7 +165,7 @@ public class HussainQadeerTestTaskRate2 {
     }
 
     @Test
-    void normalRateLessGreaterThan10() {
+    void normalRateGreaterThan10() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
         reducedPeriod.add(new cm.Period(6, 8));
         reducedPeriod.add(new cm.Period(9, 13));
