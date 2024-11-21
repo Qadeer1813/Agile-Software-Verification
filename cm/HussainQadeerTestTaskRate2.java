@@ -79,7 +79,7 @@ public class HussainQadeerTestTaskRate2 {
     void noOverlappingReducedPeriod() {
         ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
         reducedPeriod.add(new cm.Period(6, 10));
-        reducedPeriod.add(new cm.Period(11, 13));
+        reducedPeriod.add(new cm.Period(11, 12));
 
         ArrayList<cm.Period> normalPeriod = new ArrayList<>();
         normalPeriod.add(new cm.Period(12, 14));
@@ -88,14 +88,9 @@ public class HussainQadeerTestTaskRate2 {
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(5);
 
-        // This was changed from this
-        //cm.Rate rate = new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriod, normalPeriod, normalRate, reducedRate);
-        //assertFalse(reducedPeriod.get(0).overlaps(reducedPeriod.get(1)));
+        cm.Rate rate = new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriod, normalPeriod, normalRate, reducedRate);
+        assertFalse(reducedPeriod.get(0).overlaps(reducedPeriod.get(1)));
 
-        // To this
-        assertThrows(IllegalArgumentException.class, () -> {
-            new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriod, normalPeriod, normalRate, reducedRate);
-        });
     }
 
     @Test
