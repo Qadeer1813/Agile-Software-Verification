@@ -3,8 +3,8 @@ package cm;
 import java.util.List;
 
 public class Period {
-     int startHour;
-     int endHour;
+    int startHour;
+    int endHour;
 
     public Period(int start, int end) {
         if (start >= end) {
@@ -60,6 +60,9 @@ public class Period {
     }
 
     public boolean overlaps(Period period) {
+        if (period == null) {
+            throw new IllegalArgumentException("Period cannot be null");
+        }
         return this.endHour>period.startHour && this.startHour<period.endHour;
     }
 }
