@@ -2,7 +2,7 @@
 // Student Id: C00270632
 // Description: JUnit Black Box testing for Rate
 
-package cm;
+package Task1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class HussainQadeerRateTests {
 

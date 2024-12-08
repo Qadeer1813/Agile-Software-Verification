@@ -2,7 +2,7 @@
 // Student Id: C00270632
 // Description: JUnit Black Box testing for Period
 
-package cm;
+package Task1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
