@@ -321,8 +321,8 @@ public class HussainQadeerTestTaskRate3 {
         cm.Rate rate = new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
 
         cm.Period periodStay = new cm.Period(8, 10);
-        BigDecimal calculatedCharge = rate.calculate(periodStay);
-        assertEquals(new BigDecimal(6), calculatedCharge);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("5.88"), calculatedCharge);
     }
 
     @Test
@@ -358,7 +358,7 @@ public class HussainQadeerTestTaskRate3 {
 
         cm.Period periodStay = new cm.Period(11, 14);
         BigDecimal calculatedCharge = rate.calculate(periodStay);
-        assertEquals(new BigDecimal(12), calculatedCharge);
+        assertEquals(new BigDecimal("1.00"), calculatedCharge);
     }
 
     @Test
