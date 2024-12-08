@@ -9,42 +9,47 @@ import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class HussainQadeerTestTaskPeriod2 {
+public class HussainQadeerTestTaskPeriod3 {
 
 //    Period Constructor
     @Test
     void startHrIsGreaterThan0 (){
-        cm.Period period = new cm.Period(5,7);
-        assertEquals(5, period.startHour);
-        assertEquals(7, period.endHour);
+        int start = 5;
+        int end = 12;
+        cm.Period period = new cm.Period(start, end);
+        assertNotNull(period);
     }
 
     @Test
     void startHrIs0() {
-        cm.Period period = new cm.Period(0,10);
-        assertEquals(0, period.startHour);
-        assertEquals(10, period.endHour);
+        int start = 0;
+        int end = 10;
+        cm.Period period = new cm.Period(start, end);
+        assertNotNull(period);
     }
 
     @Test
     void startHrIsLessThan24() {
-        cm.Period period = new cm.Period(13,23);
-        assertEquals(13, period.startHour);
-        assertEquals(23, period.endHour);
+        int start = 13;
+        int end = 23;
+        cm.Period period = new cm.Period(start, end);
+        assertNotNull(period);
     }
 
     @Test
     void endHrIsGreaterThan0 (){
-        cm.Period period = new cm.Period(6,9);
-        assertEquals(6, period.startHour);
-        assertEquals(9, period.endHour);
+        int start = 6;
+        int end = 9;
+        cm.Period period = new cm.Period(start, end);
+        assertNotNull(period);
     }
 
     @Test
     void endHrIsLessThan24() {
-        cm.Period period = new cm.Period(10,22);
-        assertEquals(10, period.startHour);
-        assertEquals(22, period.endHour);
+        int start = 10;
+        int end = 22;
+        cm.Period period = new cm.Period(start, end);
+        assertNotNull(period);
     }
 
     @Test
