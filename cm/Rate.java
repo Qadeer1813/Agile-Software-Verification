@@ -107,8 +107,6 @@ public class Rate {
                 BigDecimal threshold = BigDecimal.valueOf(10.00);
                 if (totalCost.compareTo(threshold) > 0) {
                     totalCost = (totalCost.subtract(threshold)).multiply(BigDecimal.valueOf(0.5));
-                } else {
-                    totalCost = BigDecimal.ZERO;
                 }
                 break;
             case MANAGEMENT:
