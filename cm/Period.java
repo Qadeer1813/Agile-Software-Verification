@@ -3,8 +3,8 @@ package cm;
 import java.util.List;
 
 public class Period {
-    int startHour;
-    int endHour;
+    private int startHour;
+    private int endHour;
 
     public Period(int start, int end) {
         if (start >= end) {
