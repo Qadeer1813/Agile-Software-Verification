@@ -496,6 +496,24 @@ public class HussainQadeerTestTaskRate3 {
     }
 
     @Test
+    void visitorChargeNoDiscount() {
+        ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new cm.Period(10, 12));
+
+        ArrayList<cm.Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new cm.Period(13, 15));
+
+        BigDecimal normalRate = new BigDecimal("5");
+        BigDecimal reducedRate = new BigDecimal("5");
+
+        cm.Rate rate = new cm.Rate(cm.CarParkKind.VISITOR, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        cm.Period periodStay = new cm.Period(10, 12);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("10.00"), calculatedCharge);
+    }
+
+    @Test
     void managementRateMinCharge() {
         ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(new Period(13, 14));
@@ -514,6 +532,25 @@ public class HussainQadeerTestTaskRate3 {
     }
 
     @Test
+    void managementNoMinimumCharge() {
+        ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new cm.Period(9, 10));
+
+        ArrayList<cm.Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new cm.Period(10, 12));
+
+        BigDecimal normalRate = new BigDecimal("3");
+        BigDecimal reducedRate = new BigDecimal("2");
+
+        cm.Rate rate = new cm.Rate(cm.CarParkKind.MANAGEMENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        cm.Period periodStay = new cm.Period(10, 12);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("6.00"), calculatedCharge);
+    }
+
+
+    @Test
     void studentRateDiscount() {
         ArrayList<Period> reducedPeriods = new ArrayList<>();
         reducedPeriods.add(new Period(13, 15));
@@ -529,6 +566,25 @@ public class HussainQadeerTestTaskRate3 {
         BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
         assertEquals(new BigDecimal("11.13"), calculatedCharge);
     }
+
+    @Test
+    void studentNoDiscountApplied() {
+        ArrayList<cm.Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new cm.Period(9, 12));
+
+        ArrayList<cm.Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new cm.Period(12, 13));
+
+        BigDecimal normalRate = new BigDecimal("2");
+        BigDecimal reducedRate = new BigDecimal("1");
+
+        cm.Rate rate = new cm.Rate(cm.CarParkKind.STUDENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        cm.Period periodStay = new cm.Period(9, 13);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("5.00"), calculatedCharge);
+    }
+
 
     @Test
     void staffRateMaxPay(){
