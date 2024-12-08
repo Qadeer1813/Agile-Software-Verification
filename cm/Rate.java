@@ -13,7 +13,7 @@ public class Rate {
 
     public Rate(CarParkKind kind, ArrayList<Period> reducedPeriods, ArrayList<Period> normalPeriods, BigDecimal normalRate, BigDecimal reducedRate) {
         if (kind == null){
-            throw new NullPointerException("The Car Park Kind cannot be null");
+            throw new IllegalArgumentException("The Car Park Kind cannot be null");
         }
         if (reducedPeriods == null || normalPeriods == null) {
             throw new IllegalArgumentException("periods cannot be null");
@@ -95,11 +95,41 @@ public class Rate {
     }
     public BigDecimal calculate(Period periodStay) {
         if (periodStay == null) {
-            throw new IllegalArgumentException("periodStay cannot be null");
+            throw new IllegalArgumentException("Stay period cannot be null");
         }
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
-        return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
+        BigDecimal totalCost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
                 this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
+
+        switch (this.kind) {
+            case VISITOR:
+                BigDecimal threshold = BigDecimal.valueOf(10.00);
+                if (totalCost.compareTo(threshold) > 0) {
+                    totalCost = (totalCost.subtract(threshold)).multiply(BigDecimal.valueOf(0.5));
+                } else {
+                    totalCost = BigDecimal.ZERO;
+                }
+                break;
+            case MANAGEMENT:
+                if (totalCost.compareTo(BigDecimal.valueOf(4.00)) < 0) {
+                    totalCost = BigDecimal.valueOf(4.00);
+                }
+                break;
+            case STUDENT:
+                BigDecimal discountThreshold = BigDecimal.valueOf(5.50);
+                if (totalCost.compareTo(discountThreshold) > 0) {
+                    BigDecimal discountAmount = (totalCost.subtract(discountThreshold)).multiply(BigDecimal.valueOf(0.75));
+                    totalCost = discountThreshold.add(discountAmount);
+                }
+                break;
+            case STAFF:
+                BigDecimal maxPayable = BigDecimal.valueOf(16.00);
+                if (totalCost.compareTo(maxPayable) > 0) {
+                    totalCost = maxPayable;
+                }
+                break;
+        }
+        return totalCost;
     }
 }
