@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class HussainQadeerTestTaskRate2 {
+public class HussainQadeerTestTaskRate3 {
 
     //  Rate Constructor Tests
     @Test
@@ -459,4 +459,91 @@ public class HussainQadeerTestTaskRate2 {
         });
     }
 
+    @Test
+    void carParkKindIsNull() {
+        ArrayList<cm.Period> reducedPeriod = new ArrayList<>();
+        reducedPeriod.add(new cm.Period(3, 5));
+        reducedPeriod.add(new cm.Period(7, 10));
+
+        ArrayList<cm.Period> normalPeriod = new ArrayList<>();
+        normalPeriod.add(new cm.Period(11, 14));
+        normalPeriod.add(new cm.Period(15, 17));
+
+        BigDecimal normalRate = new BigDecimal(6);
+        BigDecimal reducedRate = new BigDecimal(3);
+        assertThrows(IllegalArgumentException.class, () -> {
+            new cm.Rate(null, reducedPeriod, normalPeriod, normalRate, reducedRate);
+        });
+    }
+
+//    Updated Tests Calculate method
+    @Test
+    void visitorRateDiscount() {
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new Period(10, 13));
+
+        ArrayList<Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new Period(13, 17));
+
+        BigDecimal normalRate = new BigDecimal("3");
+        BigDecimal reducedRate = new BigDecimal("2");
+
+        Rate rate = new Rate(CarParkKind.VISITOR, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        Period periodStay = new Period(10, 17);
+        BigDecimal calculatedCharge = rate.calculate(periodStay);
+        assertEquals(new BigDecimal("4.00"), calculatedCharge);
+    }
+
+    @Test
+    void managementRateMinCharge() {
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new Period(13, 14));
+
+        ArrayList<Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new Period(12, 13));
+
+        BigDecimal normalRate = new BigDecimal("2");
+        BigDecimal reducedRate = new BigDecimal("1");
+
+        Rate rate = new Rate(CarParkKind.MANAGEMENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        Period periodStay = new Period(12, 14);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("4.00"), calculatedCharge);
+    }
+
+    @Test
+    void studentRateDiscount() {
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new Period(13, 15));
+        ArrayList<Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new Period(10, 13));
+
+        BigDecimal normalRate = new BigDecimal("3");
+        BigDecimal reducedRate = new BigDecimal("2");
+
+        Rate rate = new Rate(CarParkKind.STUDENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        Period periodStay = new Period(10, 15);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("11.13"), calculatedCharge);
+    }
+
+    @Test
+    void staffRateMaxPay(){
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
+        reducedPeriods.add(new Period(14, 16));
+        ArrayList<Period> normalPeriods = new ArrayList<>();
+        normalPeriods.add(new Period(9, 14));
+
+        BigDecimal normalRate = new BigDecimal("4");
+        BigDecimal reducedRate = new BigDecimal("2");
+
+        Rate rate = new Rate(CarParkKind.STAFF, reducedPeriods, normalPeriods, normalRate, reducedRate);
+
+        Period periodStay = new Period(9, 16);
+        BigDecimal calculatedCharge = rate.calculate(periodStay).setScale(2, BigDecimal.ROUND_HALF_UP);
+        assertEquals(new BigDecimal("16.00"), calculatedCharge);
+    }
 }
